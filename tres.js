@@ -95,6 +95,7 @@ function mostrar()
 			invierno++;
 			personasinvierno+=cantpasajeros;
 		}
+		alert("caca");
 	}while (respuesta == 'si');
 
 	
