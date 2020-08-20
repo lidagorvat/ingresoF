@@ -1,4 +1,4 @@
-/*
+﻿/*
 3)Nos ingresan una cantidad indeterminada de estadías de  vacaciones, 
 validando los datos ingresados. 
 sexo del titular ,lugar ( “bariloche”, “cataratas” o “salta”),
@@ -19,11 +19,11 @@ function mostrar()
 	let cataratas=0;
 	let salta=0;
 	let lugarmaselegido1;
-	let lugarmasselegido2;
+	let lugarmaselegido2;
 	let respuesta;
 	let cantidaddevisitas;
-	let sexotitularmaspasajeros;
-	let cantidadmaspasajeros=0;
+	let sexotitularmáspasajeros;
+	let cantidadmáspasajeros=0;
 	let invierno=0;
 	let personasinvierno=0;
 	let promedio;
@@ -61,6 +61,8 @@ function mostrar()
 			cantpasajeros=parseInt(prompt("La cantidad ingresada no es válida. Inténtelo nuevamente ").toLowerCase());
 		}
 
+		
+
 		if(destino == 'bariloche') 
 		{
 			bariloche++;
@@ -69,22 +71,22 @@ function mostrar()
 		{
 			cataratas++;
 		}
-		else(destino == 'salta')
+		else
 		{
 			salta++;
 		}
 
-		if(cantidadmaspasajeros<cantpasajeros)
+		if(cantidadmáspasajeros<cantpasajeros)
 		{
-			cantidadmaspasajeros=cantpasajeros;
+			cantidadmáspasajeros=cantpasajeros;
 
 			if(sexo=='f')
 			{
-				sexotitularmaspasajeros='femenino';
+				sexotitularmáspasajeros='femenino';
 			}
-			if(sexo='m')
+			if(sexo=='m')
 			{
-				sexotitularmaspasajeros='masculino';
+				sexotitularmáspasajeros='masculino';
 			}
 		}
 		
@@ -93,16 +95,17 @@ function mostrar()
 			invierno++;
 			personasinvierno+=cantpasajeros;
 		}
-		
 		respuesta=prompt("¿Desea ingresar otro viaje? Ingrese 'si' para realizarlo ").toLowerCase();
-	}while(respuesta == 'si');
+
+	}while (respuesta == 'si');
 
 	
-    alert("uno");
+	
 	if(bariloche>=salta && bariloche>=cataratas)
 	{
 		flagbariloche=1;
 		cantidaddevisitas=bariloche;
+
 	}
 	if(salta>=bariloche && salta>=cataratas)
 	{
@@ -114,61 +117,66 @@ function mostrar()
 		flagcataratas=1;
 		cantidaddevisitas=cataratas;
 	}
-
+	
 	sumaflags=flagbariloche + flagsalta + flagcataratas;
 
-	alert("dos");
 	//a
-
+	
 	if(sumaflags==1)
 	{
 		if(flagbariloche==1)
 		{
-			lugarmaselegido1=="Bariloche";
+			lugarmaselegido1="Bariloche";
+
 		}
 		else if(flagsalta==1)
 		{
-			lugarmaselegido1=="Salta";
+			lugarmaselegido1="Salta";
 		}
 		else
 		{
-			lugarmaselegido1=="Cataratas";
+			lugarmaselegido1= "Cataratas";
 		}
 		console.log("El destino más visitado es " + lugarmaselegido1);
+		alert("El destino más visitado es " + lugarmaselegido1);
+
 	}
-    alert("fbg");
+
 	if(sumaflags==2)
 	{
 		if(flagbariloche==1)
 		{
-			lugarmaselegido1=="Bariloche";
+			lugarmaselegido1="Bariloche";
 		}
 		if(flagsalta==1)
 		{
 			if(lugarmaselegido1=="Bariloche")
 			{
-				lugarmaselegido2=="Salta";
+				lugarmaselegido2="Salta";
 			}
 			else
 			{
-				lugarmaselegido1=="Salta";
+				lugarmaselegido1="Salta";
 			}
 		if(flagcataratas==1)
 		{
-			lugarmaselegido2=="Cataratas";
+			lugarmaselegido2="Cataratas";
 		}
 		}
 		console.log("Los destinos más visitados son " + lugarmaselegido1 + " y " + lugarmaselegido2);
+		alert("Los destinos más visitados son " + lugarmaselegido1 + " y " + lugarmaselegido2);
 	}
-	alert("163");
+	
 	if(sumaflags==3)
 	{
 		console.log("Todos los destinos tuvieron " + cantidaddevisitas + " cantidad de visitas.");
+		alert("Todos los destinos tuvieron " + cantidaddevisitas + " cantidad de visitas.");
 	}
 	
 	 //b
-    alert("kdj");
-	 console.log("El sexo del titular que lleva más pasajeros es " + sexotitularmaspasajeros);
+
+	 console.log("El sexo del titular que lleva más pasajeros es " + sexotitularmáspasajeros);
+	alert("El sexo del titular que lleva más pasajeros es " + sexotitularmáspasajeros);
 
 	 //c
 	 if (invierno!=0)
@@ -180,6 +188,7 @@ function mostrar()
 		 promedio=0
 	 }
 	console.log("El promedio de gente que viajo en invierno es " + promedio);
+	alert("El promedio de gente que viajo en invierno es " + promedio);
 }
 
 
